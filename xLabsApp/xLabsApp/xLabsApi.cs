@@ -11,14 +11,7 @@ namespace xLabsApp
     public static class xLabsApi
     {
         const string baseApiUrl = "https://xlab.bluemix.net";
-        //const string apiVersion = "v2.4";        
-        //public string apiUrl
-        //{
-        //    get
-        //    {
-        //        return baseApiUrl + apiVersion + "/";
-        //    }
-        //}
+        
         public static async void GetPersonalityInfo(User user)
         {            
             var bio = user.bio;

@@ -13,7 +13,7 @@ namespace xLabsApp
         {
             base.OnAppearing();
 
-            if (!App.IsAuthenticated)
+            if (!App._AppDataInstance.IsAuthenticated)
             {
                 Navigation.PushModalAsync(new LoginPage());
             }

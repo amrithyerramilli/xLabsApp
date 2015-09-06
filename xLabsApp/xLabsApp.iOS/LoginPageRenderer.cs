@@ -23,10 +23,10 @@ namespace xLabsApp.iOS
                 IsShown = true;
 
                 var auth = new OAuth2Authenticator(
-                    clientId: App.OAuth.ClientId, // your OAuth2 client id
-                    scope: App.OAuth.Scope, // The scopes for the particular API you're accessing. The format for this will vary by API.
-                    authorizeUrl: new Uri(App.OAuth.AuthorizeUrl), // the auth URL for the service
-                    redirectUrl: new Uri(App.OAuth.RedirectUrl)); // the redirect URL for the service
+                    clientId: App._AppDataInstance.OAuth.ClientId, // your OAuth2 client id
+                    scope: App._AppDataInstance.OAuth.Scope, // The scopes for the particular API you're accessing. The format for this will vary by API.
+                    authorizeUrl: new Uri(App._AppDataInstance.OAuth.AuthorizeUrl), // the auth URL for the service
+                    redirectUrl: new Uri(App._AppDataInstance.OAuth.RedirectUrl)); // the redirect URL for the service
 
                 auth.Completed += (sender, eventArgs) =>
                 {

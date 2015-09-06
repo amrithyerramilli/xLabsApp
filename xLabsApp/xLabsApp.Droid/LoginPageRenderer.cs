@@ -20,48 +20,19 @@ namespace xLabsApp.Droid
             var activity = this.Context as Activity;
 
             var auth = new OAuth2Authenticator(
-                clientId: App.OAuth.ClientId, // your OAuth2 client id
-                scope: App.OAuth.Scope, // The scopes for the particular API you're accessing. The format for this will vary by API.
-                authorizeUrl: new Uri(App.OAuth.AuthorizeUrl), // the auth URL for the service
-                redirectUrl: new Uri(App.OAuth.RedirectUrl)); // the redirect URL for the service
+                clientId: App._AppDataInstance.OAuth.ClientId, // your OAuth2 client id
+                scope: App._AppDataInstance.OAuth.Scope, // The scopes for the particular API you're accessing. The format for this will vary by API.
+                authorizeUrl: new Uri(App._AppDataInstance.OAuth.AuthorizeUrl), // the auth URL for the service
+                redirectUrl: new Uri(App._AppDataInstance.OAuth.RedirectUrl)); // the redirect URL for the service
 
             auth.Completed += (sender, eventArgs) =>
             {
                 if (eventArgs.IsAuthenticated)
                 {
+                    // Use eventArgs.Account to do wonderful things
                     App.SuccessfulLoginAction.Invoke();
                     App.SaveToken(eventArgs.Account.Properties["access_token"]);
                     App.GetUserInfo();
-                    // Use eventArgs.Account to do wonderful things
-                    //var parameters = new Dictionary<string,string>();
-                    //parameters.Add("fields","id,name,about,bio,address,age_range,birthday,posts");
-                    //var request = new OAuth2Request("GET", new Uri("https://graph.facebook.com/me"), parameters, eventArgs.Account);
-                    //request.GetResponseAsync().ContinueWith(t =>
-                    //{
-                    //    if (t.IsFaulted)
-                    //        Console.WriteLine("Error: " + t.Exception.InnerException.Message);
-                    //    else
-                    //    {
-                    //        string json = t.Result.GetResponseText();
-                    //        //AccountStore.Create(this).Save(eventArgs.Account, "Facebook");
-                    //        Console.WriteLine(json);
-                    //        var user = JsonConvert.DeserializeObject<User>(json);
-                    //        App.user = user;
-                    //        var profilePage = new ProfilePage()
-                    //        {
-                    //            Content = new Label()
-                    //                {
-                    //                    Text = "Profile Page - " + App.user.id,
-                    //                    VerticalOptions = LayoutOptions.CenterAndExpand,
-                    //                    HorizontalOptions = LayoutOptions.CenterAndExpand,
-                    //                }
-                    //        };
-                    //        App.profilePage = profilePage;
-                    //        App._NavPage.Navigation.RemovePage(App.profilePage);
-                    //        App._NavPage.Navigation.PushAsync(profilePage);
-                    //    }
-                    //});
-                    
                 }
                 else
                 {
