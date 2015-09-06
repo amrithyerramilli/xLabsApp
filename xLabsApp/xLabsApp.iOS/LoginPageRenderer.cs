@@ -2,12 +2,11 @@
 using Xamarin.Auth;
 using Xamarin.Forms.Platform.iOS;
 using Xamarin.Forms;
-using OAuthTwoDemo.XForms;
-using OAuthTwoDemo.XForms.iOS;
+using xLabsApp;
 
-[assembly: ExportRenderer(typeof(LoginPage), typeof(LoginPageRenderer))]
+[assembly: ExportRenderer(typeof(LoginPage), typeof(xLabsApp.iOS.LoginPageRenderer))]
 
-namespace OAuthTwoDemo.XForms.iOS
+namespace xLabsApp.iOS
 {
     public class LoginPageRenderer : PageRenderer
     {
@@ -38,6 +37,7 @@ namespace OAuthTwoDemo.XForms.iOS
                     {
                         // Use eventArgs.Account to do wonderful things
                         App.SaveToken(eventArgs.Account.Properties["access_token"]);
+                        App.GetUserInfo();
                     }
                     else
                     {

@@ -90,6 +90,7 @@ Global
 		{432873EA-692D-4EB3-BAA3-E1C9BCD11FE4}.AppStore|Mixed Platforms.Build.0 = AppStore|iPhone
 		{432873EA-692D-4EB3-BAA3-E1C9BCD11FE4}.AppStore|x86.ActiveCfg = AppStore|iPhone
 		{432873EA-692D-4EB3-BAA3-E1C9BCD11FE4}.Debug|Any CPU.ActiveCfg = Debug|iPhone
+		{432873EA-692D-4EB3-BAA3-E1C9BCD11FE4}.Debug|Any CPU.Build.0 = Debug|iPhone
 		{432873EA-692D-4EB3-BAA3-E1C9BCD11FE4}.Debug|ARM.ActiveCfg = Debug|iPhone
 		{432873EA-692D-4EB3-BAA3-E1C9BCD11FE4}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{432873EA-692D-4EB3-BAA3-E1C9BCD11FE4}.Debug|iPhone.Build.0 = Debug|iPhone
